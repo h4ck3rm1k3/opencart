@@ -51,10 +51,19 @@ final class MySQLi {
     		} else {
 				return true;
 			}
-		} else {
-			trigger_error('Error: ' . mysql_error($this->link) . '<br />Error No: ' . mysql_errno($this->link) . '<br />' . $sql);
+/*	
+this code is never used! bug reported : https://github.com/opencart/opencart/issues/166
+	} else {
+			trigger_error(
+			'Error: ' . 
+			mysql_error($this->link) . 
+			'<br />Error No: ' . 
+			mysql_errno($this->link) . 
+			'<br />' . 
+			$sql);
 			exit();
     	}
+*/
   	}
 	
 	public function escape($value) {
